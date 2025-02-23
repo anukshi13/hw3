@@ -1,0 +1,9 @@
+<h1><%= @place.name %></h1>
+<p>Here’s what I did here:</p>
+<ul>
+  <% @place.entries.each do |entry| %>
+    <li><%= entry.title %> - <%= entry.date %></li>
+  <% end %>
+</ul>
+<%= link_to "Add a New Entry", new_place_entry_path(@place) %>
+<p><%= link_to "Back to All Places", places_path %></p>

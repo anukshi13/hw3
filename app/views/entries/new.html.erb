@@ -1,0 +1,17 @@
+<h1>New Entry for <%= @place.name %></h1>
+<%= form_with(model: @entry, local: true) do |form| %>
+  <%= form.hidden_field :place_id %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+  </p>
+  <%= form.submit "Save Entry" %>
+<% end %>
